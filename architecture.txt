@@ -1,0 +1,11 @@
+It will be 
+1 Az
+3 subnet
+  1 public
+  1 private a 
+  1 private b
+
+NAT gateway
+IGW
+Route table
+VPC
