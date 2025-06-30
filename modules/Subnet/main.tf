@@ -5,6 +5,8 @@ resource "aws_subnet" "eks-pub-sub" {
     map_public_ip_on_launch = true 
     tags = {
         Name = "eks-pub-sub"
+        "kubernetes.io/cluster/vishv-eks-cluster-1" = "shared"
+        "kubernetes.io/role/elb"                    = "1"
     }
 }
 
@@ -15,6 +17,8 @@ resource "aws_subnet" "eks-pvt-subA" {
     availability_zone = var.eks-pvt-subA-az
     tags = {
         Name = "eks-pvt-subA"
+        "kubernetes.io/cluster/vishv-eks-cluster-1" = "shared"
+        "kubernetes.io/role/internal-elb"           = "1"
     }
 }
 
@@ -24,5 +28,7 @@ resource "aws_subnet" "eks-pvt-subB" {
     availability_zone = var.eks-pvt-subB-az
     tags = {
         Name = "eks-pvt-subB"
+        "kubernetes.io/cluster/vishv-eks-cluster-1" = "shared"
+        "kubernetes.io/role/internal-elb"           = "1"
     }
 }
